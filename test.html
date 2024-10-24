@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraction Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            width: 80px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .fraction {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .whole {
+            border: 1px solid #bdc3c7;
+            padding: 5px;
+            width: 50px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        .numerator {
+            border: 1px solid #bdc3c7;
+            padding: 5px;
+            width: 50px;
+            text-align: center;
+        }
+        .denominator {
+            border: 1px solid #bdc3c7;
+            padding: 5px;
+            width: 50px;
+            text-align: center;
+            margin-left: 5px;
+        }
+        .fraction-input {
+            display: flex;
+            align-items: center;
+        }
+        .fraction-input span {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fraction Converter</h1>
+    
+    <h2>Convert Improper Fraction to Mixed Number</h2>
+    <input type="number" id="numerator" placeholder="Numerator (e.g. 9)">
+    <input type="number" id="denominator" placeholder="Denominator (e.g. 4)">
+    <button onclick="convertToMixed()">Convert</button>
+
+    <h2>Convert Mixed Number to Improper Fraction</h2>
+    <div class="fraction-input">
+        <input type="number" id="whole" class="whole" placeholder="Whole (e.g. 2)">
+        <div class="fraction">
+            <input type="number" id="mixedNumerator" class="numerator" placeholder="Numerator (e.g. 1)">
+            <span>/</span>
+            <input type="number" id="mixedDenominator" class="denominator" placeholder="Denominator (e.g. 4)">
+        </div>
+    </div>
+    <button onclick="convertToImproper()">Convert</button>
+
+    <div id="result"></div>
+
+    <script>
+        function convertToMixed() {
+            const numerator = parseInt(document.getElementById("numerator").value);
+            const denominator = parseInt(document.getElementById("denominator").value);
+            if (denominator === 0) {
+                document.getElementById("result").innerText = "Denominator cannot be zero!";
+                return;
+            }
+            const whole = Math.floor(numerator / denominator);
+            const newNumerator = numerator % denominator;
+            const result = newNumerator > 0 ? `${whole} ${newNumerator}/${denominator}` : `${whole}`;
+            document.getElementById("result").innerText = `Mixed Number: ${result}`;
+        }
+
+        function convertToImproper() {
+            const whole = parseInt(document.getElementById("whole").value);
+            const numerator = parseInt(document.getElementById("mixedNumerator").value);
+            const denominator = parseInt(document.getElementById("mixedDenominator").value);
+            if (denominator === 0) {
+                document.getElementById("result").innerText = "Denominator cannot be zero!";
+                return;
+            }
+            const improperNumerator = (whole * denominator) + numerator;
+            document.getElementById("result").innerText = `Improper Fraction: ${improperNumerator}/${denominator}`;
+        }
+    </script>
+</body>
+</html>
