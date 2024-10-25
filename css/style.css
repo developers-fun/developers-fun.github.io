@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Font';
     src: url('/Font.ttf');
@@ -28,4 +29,35 @@ body{
     margin-right: 15px;
     color: white;
     float: right;
+=======
+@font-face {
+    font-family: 'Font';
+    src: url('/Font.ttf');
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Font';
+    color: white;
+    background-color: rgb(14, 14, 14);
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(20, 20, 20);
+    padding: 10px;
+}
+.navbarTitle{
+    font-size: 30px;
+    color: white;
+}
+.navbarLinks{
+    font-size: 20px;
+    margin-top: 5px;
+    color: white;
+    float: right;
+>>>>>>> 37afe0b4693b45d126e7ad12a5b8e7254bf44622
 }

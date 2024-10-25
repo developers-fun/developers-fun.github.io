@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Font';
     src: url('/Font.ttf');
@@ -159,4 +160,97 @@ body {
     .button-group {
         flex-direction: column;
     }
+=======
+@font-face {
+    font-family: 'Font';
+    src: url('/Font.ttf');
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Font';
+    color: white;
+    background-color: rgb(14, 14, 14);
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(20, 20, 20);
+    padding: 10px;
+}
+.navbarTitle{
+    font-size: 30px;
+    color: white;
+}
+.navbarLinks{
+    font-size: 20px;
+    margin-top: 5px;
+    color: white;
+    float: right;
+}
+.Converter {
+    width: 350px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.Number {
+    width: 90px;
+    height: 120px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-family: 'Font';
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px; /* Adds space between the number and the fraction inputs */
+}
+
+.fractionNumerator, .fractionDenomenator {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-family: 'Font';
+    font-size: 30px;
+    text-align: center;
+}
+
+.line {
+    width: 70px;
+    height: 1px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.submitButton, .result{
+    width: 170px;
+    height: 70px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-family: 'Font';
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+.SectionTitle{
+    font-size: 32px;
+    margin-bottom: 30px;
+>>>>>>> 37afe0b4693b45d126e7ad12a5b8e7254bf44622
 }
