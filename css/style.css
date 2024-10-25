@@ -28,3 +28,26 @@ body{
     color: white;
     float: right;
 }
+
+.Container{
+    display: flex;
+    flex-direction: row;
+}
+
+.Box{
+    text-align: center;
+    width: 250px;
+    height: 40px;
+    outline: auto;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 25px;
+    font-family: "Font";
+}
+
+.BoxTitle {
+    color: white;
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
