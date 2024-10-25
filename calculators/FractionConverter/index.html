@@ -9,20 +9,51 @@
 <body>
     <div class="navbar">
         <a href="/"><d1 class="navbarTitle">Easy-Useful.Tools</d1></a>
+        <a href="/calculators/Calculator/"><d1 class="navbarLinks">Calculator</d1></a>
+        <a href="/calculators/FractionConverter/"><d1 class="navbarLinks">Fractions Converter</d1></a>
     </div>
+<center>
+    <!-- Title at the top -->
+    <div class="Title">
+        <center><d1 class="SectionTitle">Fraction Converter</d1></center>
+    </div>
+</center>
 
-    <center>
-        <div class="Converter">
-            <d1 class="SectionTitle">Inproper Fractions</d1>
-            <input class="fractionNumerator" id="num" placeholder="Num">
-            <hr class="line">
-            <input class="fractionDenomenator" id="den" placeholder="Den">
-            <button class="submitButton" onclick="convertToMixed()">Convert</button>
-            <button class="result">Results</button>
+<div class="Container">
+    <!-- Improper Fraction Converter -->
+        <div class="InproperConverter">
+            <center>
+                <d1 class="SectionTitle">Improper Fractions</d1>
+            </center>
+            <div class="fraction-group">
+                <div class="fraction-inputs">
+                    <input class="fractionNumerator" id="InproperNumerator" placeholder="Num">
+                    <hr class="line">
+                    <input class="fractionDenomenator" id="InproperDenomenator" placeholder="Den">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="submitButton" onclick="convertToMixed()">Convert</button>
+                <button class="Inproperresult">Results</button>
+            </div>
         </div>
-    </center>
-    <div class="advertisement">
-        <d1 class="advertisment"></d1>
+        <div class="MixedConverter">
+            <center>
+                <d1 class="SectionTitle">Mixed Fractions</d1>
+            </center>
+            <div class="fraction-group">
+                <input class="Number" id="mixedNumber" placeholder="Num">
+                <div class="fraction-inputs">
+                    <input class="fractionNumerator" id="mixedNum" placeholder="Num">
+                    <hr class="line">
+                    <input class="fractionDenomenator" id="mixedDen" placeholder="Den">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="submitButton" onclick="convertToImproper()">Convert</button>
+                <button class="Mixedresult" id="res">Results</button>
+            </div>
+        </div>
     </div>
     <script src="/js/fractionConverter.js" async></script>
 </body>
