@@ -150,3 +150,9 @@ body {
         flex-direction: column;
     }
 }
+
+@media (max-width: 500px) {
+    .ToFraction, .ToPercentage {
+        width: 80vw;
+    }
+}
