@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - Easy Useful Tools</title>
+    <link href="/css/PercentageCalculator.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/"><d1 class="navbarTitle">Easy-Useful.Tools</d1></a>
+        <a href="/calculators/Calculator/"><d1 class="navbarLinks">Calculator</d1></a>
+        <a href="/calculators/FractionConverter/"><d1 class="navbarLinks">Fractions Converter</d1></a>
+    </div>
+<div class="Container">
+    <div class="ToPercentage">
+        <center>
+            <d1 class="TitleText">Fraction to percentage</d1>
+            <div class="fraction-group">
+                <div class="fraction-inputs">
+                    <input class="fractionNumerator" id="InproperNumerator" placeholder="Num">
+                    <hr class="line">
+                    <input class="fractionDenomenator" id="InproperDenomenator" placeholder="Den">
+                </div>
+            </div>
+            <button class="ConverterButton" onclick="Convertfraction()">Convert</button>
+            <button id="Presults" class="percentageResults">Results</button>
+        </center>
+    </div>
+    <div class="ToFraction">
+        <center>
+            <d1 class="TitleText">Fraction to percentage</d1>
+            <div class="fraction-group">
+                <div class="fraction-inputs">
+                    <input class="Percentage" id="Percentage" placeholder="Num">
+                </div>
+            </div>
+            <button class="ConverterButton" onclick="Convertfraction()">Convert</button>
+            <button id="Presults" class="percentageResults">Results</button>
+        </center>
+    </div>
+</div>
+    <script src="/js/PercentageCalculator.js"></script>
+</body>
+</html>
