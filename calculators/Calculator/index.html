@@ -13,7 +13,40 @@
         <a href="/calculators/FractionConverter/"><d1 class="navbarLinks">Fractions Converter</d1></a>
     </div>
 
-    <input type="text" class="Input" id="Input">
+    <center>
+
+        <input type="text" class="expression" id="expression" placeholder="Enter expression (e.g., 5 * 3)" readonly>
+  
+        <!-- Button Container for Calculator Buttons -->
+        <div class="button-container">
+          <!-- Number Buttons -->
+           <div class="Buttonss">
+            <button onclick="appendToExpression('1')">1</button>
+            <button onclick="appendToExpression('2')">2</button>
+            <button onclick="appendToExpression('3')">3</button>
+            <button onclick="appendToExpression('+')">+</button>
+        
+            <button onclick="appendToExpression('4')">4</button>
+            <button onclick="appendToExpression('5')">5</button>
+            <button onclick="appendToExpression('6')">6</button>
+            <button onclick="appendToExpression('-')">-</button>
+        
+            <button onclick="appendToExpression('7')">7</button>
+            <button onclick="appendToExpression('8')">8</button>
+            <button onclick="appendToExpression('9')">9</button>
+            <button onclick="appendToExpression('*')">×</button>
+        
+            <button onclick="appendToExpression('.')">.</button>
+            <button onclick="appendToExpression('0')">0</button>
+            <button onclick="appendToExpression('/')">÷</button>
+            <button onclick="appendToExpression('**')">^</button>
+           </div>
+      
+          <!-- Clear and Calculate Buttons -->
+          <button class="Clear" onclick="clearExpression()">C</button>
+          <button class="Equal" onclick="calculate()">=</button>
+        </div>
+    </center>
 
     <script src="/js/Calculator.js"></script>
 </body>
