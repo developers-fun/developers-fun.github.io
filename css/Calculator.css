@@ -82,6 +82,8 @@ body {
     border: none;
     outline: none;
     border-radius: 5px;
+    color: white;
+    font-family: "Font";
   }
   .Clear, .Equal {
     width: 100px;

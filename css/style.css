@@ -31,7 +31,7 @@ body{
 
 .Container{
     display: flex;
-    flex-direction: row;
+    flex-direction: grid;
 }
 
 .Box{
@@ -53,7 +53,13 @@ body{
 }
 
 @media (max-width: 1200px) {
+    .navbarLinks{
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
     .Container {
-        flex-direction: column;
+        display: block;
     }
 }

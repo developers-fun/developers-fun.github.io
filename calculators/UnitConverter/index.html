@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <link href="/css/UnitConverter.css" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/"><d1 class="navbarTitle">Easy-Useful.Tools</d1></a>
+    </div>
+    <center>
+        <div class="UnitBox">
+            <d1 class="UnitTitle">Unit Converter</d1>
+            <center>
+                <select name="Unit" class="DropBox" id="DropdownFrom">
+                    <option value="">Choose a unit to convert from</option>
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                    <option value="yard">Yard</option>
+                    <option value="mile">Mile</option>
+                </select>
+            </center>
+            <d1 class="MiddleText">To</d1>
+            <center>
+                <select name="Unit" class="DropBox" id="DropdownTo">
+                    <option value="">Choose a unit to convert from</option>
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                    <option value="yard">Yard</option>
+                    <option value="mile">Mile</option>
+                </select>
+                <input type="number" placeholder="Unit amount" class="Input" id="Input">
+                <button class="ConvertButton" onclick="convert()">Convert</button>
+                <button class="ConvertButton" id="results">Results</button>
+            </center>
+        </div>
+    </center>
+    <script src="/js/UnitConverter.js"></script>
+</body>
+</html>
