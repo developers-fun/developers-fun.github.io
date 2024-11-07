@@ -10,59 +10,102 @@
 body {
   font-family: "Font";
   color: white;
-  background-color: rgb(14, 14, 14);
+  background-color: #121212;
 }
 .navbar {
   width: 100%;
-  height: 60px;
-  background-color: rgb(20, 20, 20);
-  padding: 10px;
+  height: 70px;
+  background-color: #1e1e1e;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
 }
 .navbarTitle {
-  font-size: 30px;
+  font-size: 32px;
   color: white;
+  transition: color 0.3s ease;
 }
-
+.navbarTitle:hover {
+  color: #4f9eff;
+}
 .Box {
-  width: 350px;
-  height: 550px;
-  outline: auto;
-  border: none;
+  width: 400px;
+  height: auto;
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  padding: 35px;
   margin-top: 50px;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #333;
 }
-
 .Title {
-  font-family: "Font";
-  font-size: 25px;
-  margin-top: 30px;
+  font-size: 32px;
+  color: #4f9eff;
   margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.GenerateButton, .results{
-  width: 275px;
-  height: 40px;
-  border: none;
-  outline: none;
+.Input {
+  width: 280px;
+  height: 50px;
+  background-color: #252525;
+  border: 2px solid #333;
   border-radius: 10px;
-  margin-top: 35px;
-  margin-bottom: 25px;
-  background-color: rgb(24, 24, 24);
   color: white;
   font-family: "Font";
-  font-size: 25px;
+  font-size: 20px;
+  padding: 0 15px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  text-align: center;
 }
-
-.Input{
-    width: 275px;
-    height: 60px;
-    font-size: 25px;
-    font-family: "Font";
-    border: none;
-    outline: none;
-    background-color: rgb(24, 24, 24);
-    color: white;
-    border-radius: 15px;
-    margin-top: 40px;
+.Input:focus {
+  border-color: #4f9eff;
+  background-color: #2a2a2a;
+  outline: none;
+}
+.GenerateButton {
+  width: 280px;
+  height: 50px;
+  margin: 25px 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #4f9eff;
+  color: white;
+  font-family: "Font";
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.GenerateButton:hover {
+  background-color: #3d8aed;
+  transform: translateY(-2px);
+}
+.GenerateButton:active {
+  transform: translateY(0);
+}
+.results {
+  width: 280px;
+  height: 50px;
+  background-color: #252525;
+  border: 2px solid #333;
+  border-radius: 10px;
+  color: white;
+  font-family: "Font";
+  font-size: 24px;
+  line-height: 50px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+}
+/* Remove spinner buttons from number inputs */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 500px) {
+  .Box {
+    width: 90%;
+    margin: 50px auto;
+  }
 }

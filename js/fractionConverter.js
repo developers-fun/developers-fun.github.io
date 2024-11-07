@@ -1,43 +1,87 @@
-function convertToMixed() {
-    // Use querySelector to directly access input elements
-    const numeratorText = document.querySelector("#InproperNumerator").value;
-    const denominatorText = document.querySelector("#InproperDenomenator").value;
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all number inputs
+    const inputs = document.querySelectorAll('input[type="number"]');
+    
+    // Add input validation to all number inputs
+    inputs.forEach(input => {
+        input.addEventListener('input', function(e) {
+            // Remove any non-numeric characters except minus sign
+            this.value = this.value.replace(/[^\d-]/g, '');
+            
+            // Ensure only one minus sign at the start
+            if (this.value.split('-').length > 2) {
+                this.value = this.value.replace(/-/g, '');
+                if (this.value) this.value = '-' + this.value;
+            }
+        });
+    });
 
-    console.log("Numerator Value:", numeratorText);
-    console.log("Denominator Value:", denominatorText);
+    window.convertToMixed = function() {
+        const numerator = parseInt(document.getElementById('InproperNumerator').value);
+        const denominator = parseInt(document.getElementById('InproperDenomenator').value);
+        const resultButton = document.querySelector('.Inproperresult');
 
-    const numerator = parseInt(numeratorText);
-    const denominator = parseInt(denominatorText);
+        // Validation
+        if (isNaN(numerator) || isNaN(denominator)) {
+            resultButton.textContent = 'Invalid input';
+            return;
+        }
 
-    // Check if parsing was successful
-    if (isNaN(numerator) || isNaN(denominator)) {
-        document.querySelector(".result").innerText = "Invalid numerator or denominator!";
-        return;
-    }
+        if (denominator === 0) {
+            resultButton.textContent = 'Invalid denominator';
+            return;
+        }
 
-    if (denominator === 0) {
-        document.querySelector(".result").innerText = "Denominator cannot be zero!";
-        return; 
-    }
+        // Calculate mixed number
+        const whole = Math.floor(Math.abs(numerator) / denominator);
+        const newNumerator = Math.abs(numerator) % denominator;
+        
+        // Format result
+        let result;
+        if (newNumerator === 0) {
+            result = (numerator < 0 ? '-' : '') + whole;
+        } else {
+            result = (numerator < 0 ? '-' : '') + 
+                    (whole > 0 ? `${whole} ${newNumerator}/${denominator}` : 
+                    `${newNumerator}/${denominator}`);
+        }
 
-    const whole = Math.floor(numerator / denominator);
-    const newNumerator = numerator % denominator;
-    const result = newNumerator > 0 ? `${whole} ${newNumerator}/${denominator}` : `${whole}`;
+        resultButton.textContent = result;
+    };
 
-    document.querySelector(".Inproperresult").innerText = `${result}`;
-}
+    window.convertToImproper = function() {
+        const whole = parseInt(document.getElementById('mixedNumber').value) || 0;
+        const numerator = parseInt(document.getElementById('mixedNum').value);
+        const denominator = parseInt(document.getElementById('mixedDen').value);
+        const resultButton = document.getElementById('res');
 
-function convertToImproper() {
-    const whole = parseInt(document.getElementById("mixedNumber").value);
-    const numerator = parseInt(document.getElementById("mixedNum").value);
-    const denominator = parseInt(document.getElementById("mixedDen").value);
-    if (denominator === 0) {
-        document.getElementById("res").innerText = "Denominator cannot be zero!";
-        return;
-    }
-    const improperNumerator = (whole * denominator) + numerator;
-    document.getElementById("res").innerText = `${improperNumerator}/${denominator}`;
-}
-function CopyResult() {
-    navigator.clipboard.writeText(document.getElementById("res").innerHTML);
-}
+        // Validation
+        if (isNaN(numerator) || isNaN(denominator)) {
+            resultButton.textContent = 'Invalid input';
+            return;
+        }
+
+        if (denominator === 0) {
+            resultButton.textContent = 'Invalid denominator';
+            return;
+        }
+
+        // Calculate improper fraction
+        const improperNumerator = Math.abs(whole) * denominator + Math.abs(numerator);
+        const sign = (whole < 0 || numerator < 0) ? '-' : '';
+        
+        resultButton.textContent = `${sign}${improperNumerator}/${denominator}`;
+    };
+
+    // Add keyboard support
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const activeElement = document.activeElement;
+            if (activeElement.closest('.InproperConverter')) {
+                convertToMixed();
+            } else if (activeElement.closest('.MixedConverter')) {
+                convertToImproper();
+            }
+        }
+    });
+});
